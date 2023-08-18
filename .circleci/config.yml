@@ -12,7 +12,7 @@ jobs:
           name: Check
           command: |
             flutter pub get
-            flutter pub run custom_lint
+            dart pub run custom_lint
 
 workflows:
   app-test:

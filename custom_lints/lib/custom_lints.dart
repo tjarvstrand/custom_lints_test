@@ -12,16 +12,8 @@ class _ExampleLinter extends PluginBase {
 class MyLint extends DartLintRule {
   MyLint() : super(code: _code);
 
-  static const _code = LintCode(
-    name: 'my_lint',
-    problemMessage: "Some error",
-  );
+  static const _code = LintCode(name: 'my_lint', problemMessage: "Some error");
 
   @override
-  void run(CustomLintResolver resolver, ErrorReporter reporter, CustomLintContext context) =>
-      context.registry.addConstructorName((node) {
-        if (node.type.element?.name == 'DateTime' && node.name?.name == 'now') {
-          reporter.reportErrorForNode(code, node);
-        }
-      });
+  void run(CustomLintResolver resolver, ErrorReporter reporter, CustomLintContext context) {}
 }
