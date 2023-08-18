@@ -1,0 +1,9 @@
+# pubspec.yaml
+name: custom_lints
+environment:
+  sdk: ">=3.0.0"
+
+dependencies:
+  analyzer:
+  analyzer_plugin:
+  custom_lint_builder:

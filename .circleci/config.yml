@@ -1,0 +1,20 @@
+version: 2.1
+
+
+jobs:
+  check:
+    resource_class: medium
+    docker:
+      - image: ghcr.io/cirruslabs/flutter:3.13.0
+    steps:
+      - checkout
+      - run:
+          name: Check
+          command: |
+            flutter pub get
+            flutter pub run custom_lint
+
+workflows:
+  app-test:
+    jobs:
+      - check
